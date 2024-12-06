@@ -235,7 +235,7 @@ public class CIServerTests extends ConsoleProgram
         dup.addParam(CISConstants.ORDER_ID_PARAM, "okn90"); //steak lunch that already exists
         dup.addParam(CISConstants.ITEM_ID_PARAM, "6a6a"); //steak lunch
         dup.addParam(CISConstants.ORDER_TYPE_PARAM, "lunch"); //steak lunch
-        success = runTest(d33, true, "error");
+        success = runTest(dup, true, "error");
         total++;
         if (success)
         {
@@ -304,7 +304,7 @@ public class CIServerTests extends ConsoleProgram
         Request u2 = new Request(CISConstants.GET_USER);
         u2.addParam(CISConstants.USER_ID_PARAM, "qwert5");
         String itemString3 = "CISUser{userID='qwert5', name='latisha', " +
-                "yearLevel='y13', orders= Order{itemID='33a', " +
+                "yearLevel='y13', orders=Order{itemID='33a', " +
                 "type='breakfast', orderID='9078ppp'}, money=28.0}";
         success = runTest(u2, false, itemString3);
         total++;
@@ -360,7 +360,7 @@ public class CIServerTests extends ConsoleProgram
             {
                 println("Test failed.");
                 println("Expected response: " + expectedSuccessOutput);
-                println("Actual response:  " + result + "\n");
+                println("Actual response:   " + result + "\n");
                 return false;
             } else
             {
